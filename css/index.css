@@ -13,3 +13,26 @@
 	font-weight: bold;
 	padding-right:2rem;
 }
+
+.checkbox label:after, .radio label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox, .radio {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+}
+
+.sumBox {
+	font-size:2rem;
+	text-align:right;
+	padding-right:.8rem;
+}
