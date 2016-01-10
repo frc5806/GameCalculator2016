@@ -53,26 +53,49 @@ $('.input-number').change(function() {
         alert('Sorry, the maximum value was reached');
         $(this).val($(this).data('oldValue'));
     }
-    
-    
 });
 
 $(".input-number").keydown(function (e) {
-        // Allow: backspace, delete, tab, escape, enter and .
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
-             // Allow: Ctrl+A
-            (e.keyCode == 65 && e.ctrlKey === true) || 
-             // Allow: home, end, left, right
-            (e.keyCode >= 35 && e.keyCode <= 39)) {
-                 // let it happen, don't do anything
-                 return;
-        }
-        // Ensure that it is a number and stop the keypress
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-    });
+    // Allow: backspace, delete, tab, escape, enter and .
+    if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+         // Allow: Ctrl+A
+        (e.keyCode == 65 && e.ctrlKey === true) || 
+         // Allow: home, end, left, right
+        (e.keyCode >= 35 && e.keyCode <= 39)) {
+             // let it happen, don't do anything
+             return;
+    }
+    // Ensure that it is a number and stop the keypress
+    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+        e.preventDefault();
+    }
+});
+
+function recalculateSums() {
+	var autoTotal = 0;
+
+	var reachAuto = $('[name="reachAuto"]').val()*2;
+	$("#reachAuto .taskTotal").text(reachAuto);
+	autoTotal+=reachAuto;
+
+	var crossAuto = $('[name="crossAuto"]').val()*10;
+	$("#crossAuto .taskTotal").text(crossAuto);
+	autoTotal+=crossAuto;
+
+	var lowGoalAuto = $('[name="lowGoalAuto"]').val()*5;
+	$("#lowGoalAuto .taskTotal").text(lowGoalAuto);
+	autoTotal+=lowGoalAuto;
+
+	var highGoalAuto = $('[name="highGoalAuto"]').val()*10;
+	$("#highGoalAuto .taskTotal").text(highGoalAuto);
+	autoTotal+=highGoalAuto;
+
+	$("#autoSum").text(autoTotal);
+}
 
 $(document).ready(function() {
-
+	recalculateSums();
+	$('.container :input').change(function(e) {
+		recalculateSums();
+	});
 })
