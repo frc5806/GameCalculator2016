@@ -8,56 +8,19 @@
 
 <body>
 	<div class="container">
-		<h1>FRC Stronghold Points Calculator</h1>
+		<h1>FRC Stronghold Game Calculator</h1>
 		<br>
 
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<th>Point Value</th>
-					<th>Action</th>
-					<th># of points</th>
-					<th>Total Points</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th></th>
-					<th><i>Autonomous</i></th>
-					<th></th>
-					<th></th>
-				</tr>
-				<tr>
-					<th id="1val">2</th>
-					<th>Reaching A Defense</th>
-					<th>
-						<input type="number" class="form-control" id="1">
-					</th>
-					<th><span id="1tot"></span></th>
-				</tr>
-				<tr>
-					<th id="2val">10</th>
-					<th>Crossing an Undamaged Defense</th>
-					<th>
-						<input type="number" class="form-control" id="2">
-					</th>
-					<th><span id="2tot"></span></th>
-				</tr>
-				<tr>
-					<th id="3val">5</th>
-					<th>Score in low goal</th>
-					<th>
-						<input type="number" class="form-control" id="3">
-					</th>
-					<th><span id="3tot"></span></th>
-				</tr>
-			</tbody>
-		<table>
+		<h2>Autonomous</h2>
+		<ul class="list-group">
+			<li class="list-group-item">Reached a Defense</li>
+			<li class="list-group-item">Crossed a Defense</li>
+			<li class="list-group-item">Scored in low goal</li>
+			<li class="list-group-item">Scored in high goal</li>
+		</ul>
 
-		<input type="button" value="Submit" id="submitButton">
-
-		<script src="jquery.min.js"></script>
-		<script src="index.js"></script>
+		<script src="script/jquery.min.js"></script>
+		<script src="script/index.js"></script>
 	</div>
 </body>
 </html>
