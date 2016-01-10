@@ -91,6 +91,30 @@ function recalculateSums() {
 	autoTotal+=highGoalAuto;
 
 	$("#autoSum").text(autoTotal);
+
+	var teleopTotal = 0;
+
+	var challengedTeleop = $('[name="challengedTeleop"]').val()*5;
+	$("#challengedTeleop .taskTotal").text(challengedTeleop);
+	teleopTotal+=challengedTeleop;
+
+	var scaledTeleop = $('[name="scaledTeleop"]').val()*15;
+	$("#scaledTeleop .taskTotal").text(scaledTeleop);
+	teleopTotal+=scaledTeleop;
+
+	var crossTeleop = $('[name="crossTeleop"]').val()*5;
+	$("#crossTeleop .taskTotal").text(crossTeleop);
+	teleopTotal+=crossTeleop;
+
+	var lowGoalTeleop = $('[name="lowGoalTeleop"]').val()*2;
+	$("#lowGoalTeleop .taskTotal").text(lowGoalTeleop);
+	teleopTotal+=lowGoalTeleop;
+
+	var highGoalTeleop = $('[name="highGoalTeleop"]').val()*5;
+	$("#highGoalTeleop .taskTotal").text(highGoalTeleop);
+	teleopTotal+=highGoalTeleop;
+
+	$("#teleopSum").text(teleopTotal);
 }
 
 $(document).ready(function() {
