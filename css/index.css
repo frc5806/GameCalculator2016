@@ -1,0 +1,15 @@
+.numSelect {
+	width: 150px;
+}
+
+.taskLabel {
+	font-size:2rem;
+	padding-left:2rem;
+}
+
+.taskTotal {
+	font-size:2rem;
+	text-align:right;
+	font-weight: bold;
+	padding-right:2rem;
+}
