@@ -2,14 +2,62 @@
 <html lang="en">
 <head>
 	<title>Game Calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 </head>
 
 <body>
-	
+	<div class="container">
+		<h1>FRC Stronghold Points Calculator</h1>
+		<br>
 
-	<input type="button" value="Submit" id="submitButton">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Point Value</th>
+					<th>Action</th>
+					<th># of points</th>
+					<th>Total Points</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th></th>
+					<th><i>Autonomous</i></th>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>
+					<th id="1val">2</th>
+					<th>Reaching A Defense</th>
+					<th>
+						<input type="number" class="form-control" id="1">
+					</th>
+					<th><span id="1tot"></span></th>
+				</tr>
+				<tr>
+					<th id="2val">10</th>
+					<th>Crossing an Undamaged Defense</th>
+					<th>
+						<input type="number" class="form-control" id="2">
+					</th>
+					<th><span id="2tot"></span></th>
+				</tr>
+				<tr>
+					<th id="3val">5</th>
+					<th>Score in low goal</th>
+					<th>
+						<input type="number" class="form-control" id="3">
+					</th>
+					<th><span id="3tot"></span></th>
+				</tr>
+			</tbody>
+		<table>
 
-	<script src="jquery.min.js"></script>
-	<script src="index.js"></script>
+		<input type="button" value="Submit" id="submitButton">
+
+		<script src="jquery.min.js"></script>
+		<script src="index.js"></script>
+	</div>
 </body>
 </html>
