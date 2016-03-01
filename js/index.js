@@ -55,12 +55,21 @@ $('.input-number').change(function() {
 				$(this).val($(this).data('oldValue'));
 		}
 
-		if ((parseInt($("input[name='scaledTeleop']").val()) + parseInt($("input[name='challengedTeleop']").val())) >= 3) {
-				$(".btn-number[data-type='plus'][data-field='scaledTeleop']").attr('disabled', true)
-				$(".btn-number[data-type='plus'][data-field='challengedTeleop']").attr('disabled', true)
-		} else {
-			$(".btn-number[data-type='plus'][data-field='scaledTeleop']").removeAttr('disabled', false)
-			$(".btn-number[data-type='plus'][data-field='challengedTeleop']").removeAttr('disabled', false)
+		if ($(this).attr('name') == 'scaledTeleop' || $(this).attr('name') == 'challengedTeleop') {
+				towerPoints = parseInt($("input[name='scaledTeleop']").val()) + parseInt($("input[name='challengedTeleop']").val());
+
+				if (towerPoints > 3) {
+						$(".btn-number[data-type='plus'][data-field='scaledTeleop']").attr('disabled', true)
+						$(".btn-number[data-type='plus'][data-field='challengedTeleop']").attr('disabled', true)
+						alert('Sorry, the maximum value was reached');
+						$(this).val($(this).data('oldValue'));
+				} else if (towerPoints == 3) {
+						$(".btn-number[data-type='plus'][data-field='scaledTeleop']").attr('disabled', true)
+						$(".btn-number[data-type='plus'][data-field='challengedTeleop']").attr('disabled', true)
+				} else {
+						$(".btn-number[data-type='plus'][data-field='scaledTeleop']").removeAttr('disabled', false)
+						$(".btn-number[data-type='plus'][data-field='challengedTeleop']").removeAttr('disabled', false)
+				}
 		}
 });
 
