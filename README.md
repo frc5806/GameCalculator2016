@@ -15,8 +15,8 @@ There are two sections: Autonomous, and TeleOp. Each section has a total, and th
 | Crossed a defense            | :heavy_check_mark: | :heavy_check_mark: |
 | Boulder in a low tower goal  | :heavy_check_mark: | :heavy_check_mark: |
 | Boulder in a high tower goal | :heavy_check_mark: | :heavy_check_mark: |
-| Challenged the tower         | :x:                | :heavy_check_mark: |
-| Scaled the tower             | :x:                | :heavy_check_mark: |
+| Challenged the tower         | N/A                | :heavy_check_mark: |
+| Scaled the tower             | N/A                | :heavy_check_mark: |
 
 
 ### Installation:  
