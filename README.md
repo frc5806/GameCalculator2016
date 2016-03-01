@@ -21,3 +21,6 @@ There are two sections: Autonomous, and TeleOp. Each section has a total, and th
 
 ### Installation:  
 None! Use the website at [frc5806.github.io/GameCalculator/](http://frc5806.github.io/GameCalculator/ "http://frc5806.github.io/GameCalculator/")
+
+### License:
+MIT License.
