@@ -70,6 +70,21 @@ $('.input-number').change(function() {
 			$(".btn-number[data-type='plus'][data-field='scaledTeleop']").removeAttr('disabled', false)
 			$(".btn-number[data-type='plus'][data-field='challengedTeleop']").removeAttr('disabled', false)
 		}
+	} else if ($(this).attr('name') == 'crossAuto' || $(this).attr('name') == 'crossTeleop') {
+		crossedNum = parseInt($("input[name='crossAuto']").val()) + parseInt($("input[name='crossTeleop']").val());
+
+		if (crossedNum > 10) {
+			$(".btn-number[data-type='plus'][data-field='crossAuto']").attr('disabled', true)
+			$(".btn-number[data-type='plus'][data-field='crossTeleop']").attr('disabled', true)
+			alert('Sorry, the maximum value was reached');
+			$(this).val($(this).data('oldValue'));
+		} else if (crossedNum == 10) {
+			$(".btn-number[data-type='plus'][data-field='crossAuto']").attr('disabled', true)
+			$(".btn-number[data-type='plus'][data-field='crossTeleop']").attr('disabled', true)
+		} else {
+			$(".btn-number[data-type='plus'][data-field='crossAuto']").removeAttr('disabled', false)
+			$(".btn-number[data-type='plus'][data-field='crossTeleop']").removeAttr('disabled', false)
+		}
 	}
 });
 
