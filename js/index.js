@@ -41,6 +41,7 @@ $('.input-number').change(function() {
 		valueCurrent = parseInt($(this).val());
 
 		name = $(this).attr('name');
+
 		if(valueCurrent >= minValue) {
 				$(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
 		} else {
@@ -52,6 +53,14 @@ $('.input-number').change(function() {
 		} else {
 				alert('Sorry, the maximum value was reached');
 				$(this).val($(this).data('oldValue'));
+		}
+
+		if ((parseInt($("input[name='scaledTeleop']").val()) + parseInt($("input[name='challengedTeleop']").val())) >= 3) {
+				$(".btn-number[data-type='plus'][data-field='scaledTeleop']").attr('disabled', true)
+				$(".btn-number[data-type='plus'][data-field='challengedTeleop']").attr('disabled', true)
+		} else {
+			$(".btn-number[data-type='plus'][data-field='scaledTeleop']").removeAttr('disabled', false)
+			$(".btn-number[data-type='plus'][data-field='challengedTeleop']").removeAttr('disabled', false)
 		}
 });
 
